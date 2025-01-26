@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جامعة الباحة</title>
+    <style>
+        /* إعادة تعيين بعض الإعدادات الافتراضية */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff; /* لون النص أبيض */
+            direction: rtl;
+            text-align: center;
+            overflow: hidden; /* لمنع التمرير الأفقي */
+        }
+
+        /* خلفية الصورة مع تأثير Parallax */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://bu.edu.sa/documents/776964/60960093/EZ1k9jFWAAEzoif+%281%29.jpg/d9ee897a-9832-8cf4-e4e5-5162bb1ea5c0?t=1625055550486') no-repeat center center/cover;
+            z-index: -1;
+            transform: scale(1.1); /* تكبير الصورة قليلاً */
+            will-change: transform; /* تحسين الأداء */
+        }
+
+        header {
+            background: rgba(0, 48, 73, 0.8); /* لون أزرق غامق مع شفافية */
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        main {
+            padding: 20px;
+            background: rgba(40, 67, 85, 0.8); /* لون أزرق غامق مع شفافية */
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #1a535c; /* لون أخضر غامق */
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background: #0d3b44; /* لون أخضر أغمق */
+        }
+
+        footer {
+            background: rgba(0, 48, 73, 0.8); /* لون أزرق غامق مع شفافية */
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 20px;
+        }
+
+        /* إخفاء الصفحات غير النشطة */
+        .page {
+            display: none;
+        }
+
+        /* عرض الصفحة النشطة */
+        .page.active {
+            display: block;
+        }
+
+        /* تنسيق الجدول */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #1a535c; /* لون أخضر غامق */
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1); /* شفافية بيضاء */
+        }
+    </style>
+</head>
+<body>
+    <!-- الصفحة الأولى -->
+    <div id="page1" class="page active">
+        <header>
+            <h1>مرحبًا بكم في جامعة الباحة</h1>
+        </header>
+
+        <main>
+            <p>جامعة الباحة هي إحدى الجامعات السعودية الرائدة في مجال التعليم العالي.</p>
+            <button onclick="showPage('page2')" class="button">تعرف على الجامعة</button>
+            <button onclick="showPage('page3')" class="button">التسجيل</button>
+            <br><br>
+            <p>يمكنك زيارة الموقع الرسمي من خلال الرابط التالي:</p>
+            <a href="https://اسم المستخدم.github.io/اسم المستودع" class="button" target="_blank">زيارة الموقع</a>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 جامعة الباحة. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+    <!-- الصفحة الثانية -->
+    <div id="page2" class="page">
+        <header>
+            <h1>عن جامعة الباحة</h1>
+        </header>
+
+        <main>
+            <h2>الكليات</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>اسم الكلية</th>
+                        <th>التخصصات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>كلية الهندسة</td>
+                        <td>هندسة الحاسبات، الهندسة المدنية، الهندسة الكهربائية</td>
+                    </tr>
+                    <tr>
+                        <td>كلية الطب</td>
+                        <td>الطب البشري، التمريض، الصيدلة</td>
+                    </tr>
+                    <tr>
+                        <td>كلية العلوم الإدارية</td>
+                        <td>إدارة الأعمال، المحاسبة، التسويق</td>
+                    </tr>
+                    <tr>
+                        <td>كلية الحاسبات وتقنية المعلومات</td>
+                        <td>علوم الحاسب، تقنية المعلومات، الأمن السيبراني</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>الخدمات الطلابية</h2>
+            <button class="button" onclick="window.location.href='https://bu.edu.sa/web/deanship-of-admission-and-registration'">خدمات القبول والتسجيل</button>
+            <button class="button" onclick="window.location.href='https://bu.edu.sa/en/web/policies-and-guidelines'">الادلة واللوائح</button>
+            <button class="button" onclick="window.location.href='https://bu.edu.sa/ar/web/department-of-administrative-development'">مركز التدريب والتطوير</button>
+
+            <h2>الرؤية والرسالة</h2>
+            <p><strong>الرؤية:</strong> أن تكون جامعة رائدة في التعليم والبحث العلمي وخدمة المجتمع.</p>
+            <p><strong>الرسالة:</strong> تقديم تعليم متميز وإنتاج بحوث إبداعية تخدم المجتمع وتلبي احتياجات التنمية.</p>
+
+            <button onclick="showPage('page1')" class="button">عودة إلى الصفحة الرئيسية</button>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 جامعة الباحة. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+    <!-- الصفحة الثالثة (صفحة التسجيل) -->
+    <div id="page3" class="page">
+        <header>
+            <h1>التسجيل في جامعة الباحة</h1>
+        </header>
+
+        <main>
+            <p>مرحبًا بكم في صفحة التسجيل. يرجى تعبئة النموذج التالي:</p>
+            <form>
+                <label for="name">الاسم الكامل:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <button type="submit" class="button">تسجيل</button>
+            </form>
+
+            <button onclick="showPage('page1')" class="button">عودة إلى الصفحة الرئيسية</button>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 جامعة الباحة. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+    <script>
+        // دالة للتبديل بين الصفحات
+        function showPage(pageId) {
+            // إخفاء جميع الصفحات
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // عرض الصفحة المطلوبة
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // تأثير Parallax للخلفية
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 20 - 10;
+            const y = (e.clientY / window.innerHeight) * 20 - 10;
+            document.body.style.backgroundPosition = '${x}px ${y}px';
+        });
+    </script>
+</body>
+</html>
